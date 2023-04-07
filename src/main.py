@@ -61,6 +61,10 @@ def run_params(args):
         elif args.method == "FNC":
             params["loss"] = "cross_entropy_loss"
             params["dataset"] = "last_30_train_test_fnw"
+        elif args.method == "3head":
+            params["loss"] = "3head_dfm_loss"
+            params["dataset"] = "last_30_train_test_esdfm_cut_hour_" + \
+                                str(args.C)
     return params
 
 if __name__ == "__main__":
